@@ -43,8 +43,7 @@ def compute_mask_iou_vectorized(masks: np.ndarray) -> np.ndarray:
     masks_flat = masks_bool.reshape(masks.shape[0], -1)
     intersection = np.logical_and(masks_flat[:, None], masks_flat[None, :]).sum(axis=2)
     union = np.logical_or(masks_flat[:, None], masks_flat[None, :]).sum(axis=2)
-    iou_matrix = intersection / union
-    return iou_matrix
+    return intersection / union
 
 
 def mask_non_max_suppression(

@@ -29,8 +29,7 @@ def encode_image_to_base64(image: np.ndarray) -> str:
     if not success:
         raise ValueError("Could not encode image to JPEG format.")
 
-    encoded_image = base64.b64encode(buffer).decode('utf-8')
-    return encoded_image
+    return base64.b64encode(buffer).decode('utf-8')
 
 
 def compose_headers(api_key: str) -> dict:
